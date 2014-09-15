@@ -39,7 +39,7 @@ In order to configure plugins you need to open up the `config.py` file. This fil
 
 # Plugins
 
-FOr now there is only one plugin described here. It is able to substittue some of the string resources from the binary version of the `AndroidManifest.xml`. This plugin is called `Manifest`.
+FOr now there is only one plugin [described here](http://maldr0id.blogspot.com/2014/09/having-fun-with-androidmanifestxml.html). It is able to substittue some of the string resources from the binary version of the `AndroidManifest.xml`. This plugin is called `Manifest`.
 
 ## Manifest
 
