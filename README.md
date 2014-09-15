@@ -11,7 +11,31 @@ Since this is a PoC, there isn';t any fancy way to strat it. Just clone the repo
 python manifesto.py -o output.apk input.apk
 ```
 
-And you will have (well, almost) obfuscated `output.apk`. In order to configure plugins you need to open up the `config.py` file. This file contains a `config` dictionary. Each key in this dictionary is the name of the plugin (e.g. `Manifest`). Each value is a dictionary of options (described below).
+And you will have (well, almost) obfuscated `output.apk`. All of the command line options are available when you ask for help:
+
+```
+$ python manifesto.py -h
+usage: manifesto.py [-h] [--outfile OUTFILE] [--keep_meta] [--force_overwrite]
+                    [-v]
+                    apk_file
+
+(De)obfuscate AndroidManifest file
+
+positional arguments:
+  apk_file              APK file to (de)obfuscate
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --outfile OUTFILE, -o OUTFILE
+                        Output APK file (defaults to obfuscated.apk)
+  --keep_meta, -k       Keep the META-INF directory (signature)
+  --force_overwrite, -f
+                        Overwrite output file, if it exists
+  -v, --verbose         increase output verbosity
+
+```
+
+In order to configure plugins you need to open up the `config.py` file. This file contains a `config` dictionary. Each key in this dictionary is the name of the plugin (e.g. `Manifest`). Each value is a dictionary of options (described below).
 
 # Plugins
 
