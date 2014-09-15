@@ -5,7 +5,7 @@ PoC framework for APK obfuscation, used to demonstrate some of the obfuscation e
 
 # Starting
 
-Since this is a PoC, there isn';t any fancy way to strat it. Just clone the repo and type up:
+Since this is a PoC, there isn't any fancy way to strat it. Just clone the repo and type up:
 
 ```
 python manifesto.py -o output.apk input.apk
