@@ -5,13 +5,13 @@ PoC framework for APK obfuscation, used to demonstrate some of the obfuscation e
 
 # Starting
 
-Since this is a PoC, there isn't any fancy way to strat it. Just clone the repo and type up:
+Since this is a PoC, there isn't a fancy way to start it. Just clone the repo and type up:
 
 ```
 python manifesto.py -o output.apk input.apk
 ```
 
-And you will have (well, almost) obfuscated `output.apk`. All of the command line options are available when you ask for help:
+And you will have (well, almost) an obfuscated `output.apk`. All of the command line options are available when you ask for help:
 
 ```
 $ python manifesto.py -h
@@ -39,7 +39,7 @@ In order to configure plugins you need to open up the `config.py` file. This fil
 
 # Plugins
 
-FOr now there is only one plugin [described here](http://maldr0id.blogspot.com/2014/09/having-fun-with-androidmanifestxml.html). It is able to substittue some of the string resources from the binary version of the `AndroidManifest.xml`. This plugin is called `Manifest`.
+For now there is only one plugin [described here](http://maldr0id.blogspot.com/2014/09/having-fun-with-androidmanifestxml.html). It is able to substitute some of the string resources from the binary version of the `AndroidManifest.xml`. This plugin is called `Manifest`.
 
 ## Manifest
 
