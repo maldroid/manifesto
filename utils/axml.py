@@ -19,13 +19,6 @@ class AXML:
 		else:
 			self.content = open(self.path, 'r').read()
 
-#	def fill_zeros(self, off, size):
-#		self.content = self.content[:off] + '\x10' * size + self.content[off+size:]
-
-#	def dump(self, path):
-#		with open(path, 'w') as f:
-#			f.write(self.content)
-
 	def parse_strings(self):
 		self.read_file()
 		numberOfStrings = self.littleEndian(4*4)
@@ -41,9 +34,10 @@ class AXML:
 			size = self.littleEndian(stringTableOffset+off, 2)
 			strings.append({'offset': stringTableOffset+off+2, 'size': 2*size, 'value': self.content[stringTableOffset+off+2:stringTableOffset+off+2*size+2].decode(('utf16'))})
 			i += 1
-		off = stringTableOffset+off+2*size+4
+		off = stringTableOffset+off+2*size + 1
+		while (self.content[off] != '\x80'):
+			off += 1
 		off += 4
-		size = ord(self.content[off])
 		i = 0
 		j = 0
 		off += 4 
@@ -52,10 +46,4 @@ class AXML:
 			strings[j]['resource_id'] = (self.littleEndian(off+i))
 			i += 4
 			j += 1
-#		for i in xrange(1):
-#			self.fill_zeros(strings[i][0], strings[i][1])
 		return strings_index_table, strings
-#			if i < len(resources):
-#				print '%d (0x%08x): %s' % (i, resources[i], strings[i])
-#			else:
-#				print '%d (): %s' % (i, strings[i])

@@ -1,6 +1,7 @@
 from utils.axml import AXML
 from utils.templates import Obfuscator
 import os, logging
+from utils.resourceid import RESOURCE_ID
 
 class Manifest(Obfuscator):
 	def __init__(self, path, config):
