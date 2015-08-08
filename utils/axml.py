@@ -17,7 +17,7 @@ class AXML:
 			apk = ZipFile(self.path, 'r')
 			self.content = apk.read('AndroidManifest.xml')
 		else:
-			self.content = open(self.path, 'r').read()
+			self.content = open(self.path, 'rb').read()
 
 	def parse_strings(self):
 		self.read_file()
